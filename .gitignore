@@ -1,0 +1,37 @@
+# Credentials and local machine state
+.secrets/
+state/
+jobs/
+*.sqlite3
+*.sqlite3-*
+
+# Runtime evidence and business/test data
+runs/
+info/*.xlsx
+*.xls
+query_result_*.xlsx
+ops_log_*.txt
+field_dropdown_*.png
+*.log
+*.tmp
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.tmp_xlsx_inspect/
+
+# Build output
+build/
+dist/
+*.spec
+
+# Editor and OS metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

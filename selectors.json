@@ -1,0 +1,106 @@
+{
+  "_comment": "E10 UI 自动化 selector 配置：所有界面字符串集中于此。改界面文案/换账套只动这里，不动代码。",
+  "_meta": {
+    "schema_version": 1,
+    "selector_version": "2026-09-23.1",
+    "policy": "数字型 AutomationId 禁止作为生产 selector；语义 ID 必须经客户端重启复验后才能标记 restart_verified"
+  },
+  "windows": {
+    "main_prefix": "鼎捷ERP E10",
+    "browse_prefix": "浏览 - ",
+    "advanced_query_title": "高级查询",
+    "login_title": "登录",
+    "transient_titles": ["欢迎", "更新程序", "LoadForm"]
+  },
+  "login": {
+    "client_executable": "%LOCALAPPDATA%\\Digiwin\\E10\\Client\\Digiwin.Mars.Deployment.Client.exe",
+    "window_title": "登录",
+    "main_prefix": "鼎捷ERP E10",
+    "failure_titles": ["错误", "警告", "提示"],
+    "transient_titles": ["欢迎", "更新程序", "LoadForm"],
+    "username_names": ["用户名", "用户", "账号", "帐号"],
+    "account_set_names": ["账套", "帐套"],
+    "submit_button_names": ["登录", "登入", "确定"],
+    "automation_ids": {
+      "username": "txtUserName",
+      "password": "txtPwd",
+      "account_set": "cboCompanyName",
+      "submit": "btnOK"
+    },
+    "default_credential_profile": "ft_test_hr12",
+    "development_allowed_account_sets": ["FT"],
+    "selector_stability": "candidate_verified_in_one_live_session_20260922_needs_restart_verification",
+    "startup_timeout_seconds": 120,
+    "result_timeout_seconds": 90,
+    "policy": "密码控件必须唯一且 IsPassword=true；其他控件必须按语义名称/非数字 AutomationId 唯一命中；命中不唯一即停止"
+  },
+  "nav": {
+    "module_group_button": "集团运营管理系统",
+    "menu_panel_automation_id": "menuGourpControl",
+    "menu_panel_stability": "candidate",
+    "default_tree": ["采购管理"],
+    "default_func": "维护采购订单"
+  },
+  "query": {
+    "schemes": ["全部", "未审核", "已审核", "作废", "今天", "本周", "本月"],
+    "advanced_trigger_button": "高级查询",
+    "editor_name": "数据编辑器",
+    "dropdown_next_button": "下一行",
+    "dropdown_next_automation_id": "DownButton",
+    "dropdown_max_scroll_steps": 100,
+    "dropdown_scroll_batch": 8,
+    "submit_button": "查找(Q)",
+    "submit_automation_id": "btnQuery",
+    "submit_automation_id_stability": "candidate",
+    "new_row_marker": -2147483647,
+    "field_first_screen": true
+  },
+  "grid": {
+    "data_item_row_pattern": "row {n}"
+  },
+  "requisition": {
+    "browse_title": "浏览 - 维护请购单",
+    "edit_title": "维护请购单",
+    "buttons": {
+      "new": "新建",
+      "validate": "校验",
+      "save": "保存",
+      "close": "关闭"
+    },
+    "lookup_dialogs": {
+      "document_type": "查询单据类型",
+      "applicant": "查询员工",
+      "item": "查询品号",
+      "item_rejected_alternatives": ["查询资产类品号"]
+    },
+    "lookup_controls": {
+      "column_automation_id": "cmboxSimpleColumns",
+      "keyword_automation_id": "txtSearchKeyword",
+      "search_automation_id": "btnSimpleQuery",
+      "confirm_automation_id": "btnOK",
+      "stability": "candidate"
+    },
+    "date_automation_id": "txtDate",
+    "date_automation_id_stability": "candidate",
+    "field_scopes": {
+      "document_type": "SelCtrDOC_ID",
+      "applicant": "SelCtrSTAFF_ID",
+      "required_date": "UDF_dtpUDF041",
+      "line_grid": "grdREQUISITION_D",
+      "quantity_editor": "colREQUISITION_QTYSelectWindowEditor",
+      "stability": "candidate"
+    },
+    "header_lookup_button_policy": {
+      "selector": "ButtonControl scoped by field pane; require exactly two; query button is leftmost",
+      "coordinate_use": "relative ordering only; absolute rectangles remain diagnostic_only",
+      "stability": "candidate_needs_restart_verification"
+    },
+    "line_columns": {
+      "item": "品号",
+      "quantity": "请购数量",
+      "new_row_marker": -2147483647
+    },
+    "warehouse_behavior": "UNVERIFIED_AUTO_DEFAULT",
+    "recorded_document_number": "H250505007"
+  }
+}
